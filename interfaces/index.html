@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solo eléctricos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="font-sans flex flex-col min-h-screen">
+    <header class="flex justify-between items-center p-4 bg-gray-100">
+        <div class="w-12 h-12 bg-gray-300"></div>
+        <nav class="hidden md:flex space-x-4">
+            <a href="#" class="text-blue-600">Inicio</a>
+            <a href="#" class="text-blue-600">Productos</a>
+            <a href="#" class="text-blue-600">Nosotros</a>
+        </nav>
+        <div class="space-x-2">
+            <button class="px-3 py-1 border border-gray-300 rounded">Registrarme</button>
+            <button class="px-3 py-1 border border-gray-300 rounded">Iniciar sesión</button>
+        </div>
+        <button id="mobile-menu-button" class="md:hidden flex items-center px-3 py-2 border rounded">
+            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <title>Menu</title>
+                <path d="M0 3h20v2H0zM0 7h20v2H0zM0 11h20v2H0zM0 15h20v2H0z" />
+            </svg>
+        </button>
+    </header>
+    <nav id="mobile-menu" class="hidden md:hidden">
+        <ul class="flex flex-col p-4 space-y-2 bg-gray-100">
+            <li><a href="#" class="text-blue-600">Inicio</a></li>
+            <li><a href="#" class="text-blue-600">Productos</a></li>
+            <li><a href="#" class="text-blue-600">Nosotros</a></li>
+        </ul>
+    </nav>
+
+    <div class="flex justify-center my-6">
+        <input type="text" placeholder="Buscar producto"
+            class="w-full md:w-96 px-3 py-2 border border-gray-300 rounded">
+    </div>
+
+    <section class="bg-gray-200 p-6 my-6">
+        <h2 class="text-2xl font-bold mb-4 text-center">Promociones</h2>
+        <div class="relative overflow-hidden" style="height: 200px;">
+            <div id="carousel" class="flex transition-transform duration-500 ease-in-out" style="height: 100%;">
+                <div class="w-full flex-shrink-0 bg-blue-300 flex items-center justify-center">
+                    <p>Promoción 1</p>
+                </div>
+                <div class="w-full flex-shrink-0 bg-green-300 flex items-center justify-center">
+                    <p>Promoción 2</p>
+                </div>
+                <div class="w-full flex-shrink-0 bg-red-300 flex items-center justify-center">
+                    <p>Promoción 3</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="p-6 flex-grow">
+        <h2 class="text-2xl font-bold mb-6 text-center">Nuestros productos</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- 8 productos -->
+            <div class="bg-gray-200 p-4 text-center">
+                <p class="text-blue-600 mb-2">Título producto</p>
+                <p class="mb-2">Cantidad disponible</p>
+                <p>$00.00</p>
+            </div>
+            <div class="bg-gray-200 p-4 text-center">
+                <p class="text-blue-600 mb-2">Título producto</p>
+                <p class="mb-2">Cantidad disponible</p>
+                <p>$00.00</p>
+            </div>
+            <div class="bg-gray-200 p-4 text-center">
+                <p class="text-blue-600 mb-2">Título producto</p>
+                <p class="mb-2">Cantidad disponible</p>
+                <p>$00.00</p>
+            </div>
+            <div class="bg-gray-200 p-4 text-center">
+                <p class="text-blue-600 mb-2">Título producto</p>
+                <p class="mb-2">Cantidad disponible</p>
+                <p>$00.00</p>
+            </div>
+            <div class="bg-gray-200 p-4 text-center">
+                <p class="text-blue-600 mb-2">Título producto</p>
+                <p class="mb-2">Cantidad disponible</p>
+                <p>$00.00</p>
+            </div>
+            <div class="bg-gray-200 p-4 text-center">
+                <p class="text-blue-600 mb-2">Título producto</p>
+                <p class="mb-2">Cantidad disponible</p>
+                <p>$00.00</p>
+            </div>
+            <div class="bg-gray-200 p-4 text-center">
+                <p class="text-blue-600 mb-2">Título producto</p>
+                <p class="mb-2">Cantidad disponible</p>
+                <p>$00.00</p>
+            </div>
+            <div class="bg-gray-200 p-4 text-center">
+                <p class="text-blue-600 mb-2">Título producto</p>
+                <p class="mb-2">Cantidad disponible</p>
+                <p>$00.00</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white p-6 mt-auto">
+        <div class="container mx-auto">
+            <div class="flex flex-wrap justify-between">
+                <div class="w-full md:w-1/3 mb-6 md:mb-0">
+                    <h3 class="text-lg font-bold mb-2">Solo eléctricos</h3>
+                    <p>Tu tienda de confianza para productos eléctricos.</p>
+                </div>
+                <div class="w-full md:w-1/3 mb-6 md:mb-0">
+                    <h3 class="text-lg font-bold mb-2">Enlaces rápidos</h3>
+                    <ul>
+                        <li><a href="#" class="hover:text-gray-300">Inicio</a></li>
+                        <li><a href="#" class="hover:text-gray-300">Productos</a></li>
+                        <li><a href="#" class="hover:text-gray-300">Nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-1/3">
+                    <h3 class="text-lg font-bold mb-2">Contacto</h3>
+                    <p>Email: info@soloelectricos.com</p>
+                    <p>Teléfono: (123) 456-7890</p>
+                </div>
+            </div>
+            <div class="mt-6 text-center">
+                <p>&copy; 2024 Solo eléctricos. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- <script src="./js/carousel.js"></script>
+    <script src="/js/menu.js"></script> -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        const carousel = document.getElementById('carousel');
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            carousel.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % 3;
+            showSlide(currentIndex);
+        }
+
+        setInterval(nextSlide, 5000);
+    </script>
+</body>
+
+</html>

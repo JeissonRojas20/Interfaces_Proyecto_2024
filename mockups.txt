@@ -1,0 +1,10 @@
+registro producto
+registro producto almacenista
+consulta producto
+consulta productos
+consulta producto admin <T--hacer responsivo los iconos>
+consulta producto almacenista
+actualización producto
+actualización producto almacenista
+eliminar producto
+
