@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solo electricos</title>
+    <!-- Agregar el enlace al archivo de estilos de Tailwind CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <!-- Agregar el enlace al archivo de la biblioteca FontAwesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100 h-screen">
+
+    <!-- Navegación Superior -->
+    <nav class="bg-gray-800 p-4 flex items-center justify-between">
+      <div>
+        <h1 class="text-white text-xl font-semibold">LOGO</h1>
+      </div>
+      <div class="flex items-center space-x-4">
+        <span class="text-white">Bienvenido Admin</span>
+        <i class="fas fa-user-circle text-white text-2xl"></i>
+      </div>
+    </nav>
+
+    <!-- Navegación lateral -->
+    <div class="flex">
+      <aside class="bg-gray-800 text-white w-64 min-h-screen p-4">
+        <nav>
+          <ul class="space-y-2">
+            <li class="opcion-con-desplegable">
+              <div class="flex items-center justify-between p-2 hover:bg-gray-700">
+                <div class="flex items-center">
+                  <i class="fas fa-calendar-alt mr-2"></i>
+                  <span>Inicio</span>
+                </div>
+              </div>
+            </li>
+            <li class="opcion-con-desplegable">
+              <div class="flex items-center justify-between p-2 hover:bg-gray-700">
+                <div class="flex items-center">
+                  <i class="fas fa-money-bill-wave mr-2"></i>
+                  <span>Usuarios</span>
+                </div>
+                <i class="fas fa-chevron-left text-xs"></i>
+              </div>
+            </li>
+            <li class="opcion-con-desplegable">
+              <div class="flex items-center justify-between p-2 hover:bg-gray-700">
+                <div class="flex items-center">
+                  <i class="fas fa-chart-bar mr-2"></i>
+                  <span>Productos</span>
+                </div>
+                <i class="fas fa-chevron-left text-xs"></i>
+              </div>
+              <ul class="desplegable ml-4 hidden">
+                <li>
+                  <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
+                    <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                    Registrar
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
+                    <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                    Consultar
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="opcion-con-desplegable">
+              <div class="flex items-center justify-between p-2 hover:bg-gray-700">
+                <div class="flex items-center">
+                  <i class="fas fa-file-alt mr-2"></i>
+                  <span>Ventas</span>
+                </div>
+                <i class="fas fa-chevron-left text-xs"></i>
+              </div>
+              <ul class="desplegable ml-4 hidden">
+                <li>
+                  <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
+                    <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                    Firmas pendientes
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
+                    <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                    Documentos
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="opcion-con-desplegable">
+              <div class="flex items-center justify-between p-2 hover:bg-gray-700">
+                <div class="flex items-center">
+                  <i class="fas fa-file-alt mr-2"></i>
+                  <span>Pedidos</span>
+                </div>
+                <i class="fas fa-chevron-left text-xs"></i>
+              </div>
+              <ul class="desplegable ml-4 hidden">
+                <li>
+                  <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
+                    <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                    Firmas pendientes
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="block p-2 hover:bg-gray-700 flex items-center">
+                    <i class="fas fa-chevron-right mr-2 text-xs"></i>
+                    Documentos
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Titulo del main -->
+      <main class="flex-grow p-4 container mx-auto">
+        <center>
+          <h1 class="text-2xl mb-4 p-4 bg-gray-300 font-bold">Nuestros productos</h1>
+        </center>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          
+          <!-- Contenedor de Alpine.js para cada producto -->
+          <div x-data="{ open: false }">
+            <!-- Producto 1 -->
+            <div class="bg-gray-300 p-4 flex flex-col justify-between">
+              <img src="https://via.placeholder.com/150" alt="Imagen del producto" class="w-full h-32 object-cover mb-2" />
+              <h2 class="text-lg font-bold mb-1">Nombre del producto 1</h2>
+              <p class="text-sm mb-2">Descripción del producto 1</p>
+              <div class="flex justify-between items-center">
+                <span class="font-bold">$00.00</span>
+                <div class="flex space-x-2">
+                  <!-- Botón de editar -->
+                  <button class="bg-blue-500 text-white p-2 rounded hover:bg-blue-300 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                    </svg>
+                  </button>
+                  <!-- Botón de eliminar -->
+                  <button class="bg-red-600 text-white p-2 rounded hover:bg-red-300 transition" @click="open = true">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 8.084.92m-8.084-.92c.34-.053.682-.109 1.022-.165m.542 0a48.11 48.11 0 0 1 7.15.696" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modal -->
+            <div
+              x-show="open"
+              @keydown.escape.window="open = false"
+              class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+            >
+              <div class="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
+                <h2 class="text-lg font-bold mb-4">Confirmación de eliminación</h2>
+                <p class="mb-4">¿Estás seguro de que deseas eliminar este producto?</p>
+                <div class="flex justify-end space-x-4">
+                  <button
+                    @click="open = false"
+                    class="bg-gray-500 text-white p-2 rounded hover:bg-gray-400 transition"
+                  >
+                    Cancelar
+                  </button>
+                  <button
+                    @click="open = false"
+                    class="bg-red-600 text-white p-2 rounded hover:bg-red-500 transition"
+                  >
+                    Eliminar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Repetir el contenedor para los otros productos -->
+          <div x-data="{ open: false }">
+            <!-- Producto 2 -->
+            <div class="bg-gray-300 p-4 flex flex-col justify-between">
+              <img src="https://via.placeholder.com/150" alt="Imagen del producto" class="w-full h-32 object-cover mb-2" />
+              <h2 class="text-lg font-bold mb-1">Nombre del producto 2</h2>
+              <p class="text-sm mb-2">Descripción del producto 2</p>
+              <div class="flex justify-between items-center">
+                <span class="font-bold">$00.00</span>
+                <div class="flex space-x-2">
+                  <!-- Botón de editar -->
+                  <button class="bg-blue-500 text-white p-2 rounded hover:bg-blue-300 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                    </svg>
+                  </button>
+                  <!-- Botón de eliminar -->
+                  <button class="bg-red-600 text-white p-2 rounded hover:bg-red-300 transition" @click="open = true">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 8.084.92m-8.084-.92c.34-.053.682-.109 1.022-.165m.542 0a48.11 48.11 0 0 1 7.15.696" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modal -->
+            <div
+              x-show="open"
+              @keydown.escape.window="open = false"
+              class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+            >
+              <div class="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
+                <h2 class="text-lg font-bold mb-4">Confirmación de eliminación</h2>
+                <p class="mb-4">¿Estás seguro de que deseas eliminar este producto?</p>
+                <div class="flex justify-end space-x-4">
+                  <button
+                    @click="open = false"
+                    class="bg-gray-500 text-white p-2 rounded hover:bg-gray-400 transition"
+                  >
+                    Cancelar
+                  </button>
+                  <button
+                    @click="open = false"
+                    class="bg-red-600 text-white p-2 rounded hover:bg-red-500 transition"
+                  >
+                    Eliminar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Producto 3 -->
+          <div x-data="{ open: false }">
+            <div class="bg-gray-300 p-4 flex flex-col justify-between">
+              <img src="https://via.placeholder.com/150" alt="Imagen del producto" class="w-full h-32 object-cover mb-2" />
+              <h2 class="text-lg font-bold mb-1">Nombre del producto 3</h2>
+              <p class="text-sm mb-2">Descripción del producto 3</p>
+              <div class="flex justify-between items-center">
+                <span class="font-bold">$00.00</span>
+                <div class="flex space-x-2">
+                  <!-- Botón de editar -->
+                  <button class="bg-blue-500 text-white p-2 rounded hover:bg-blue-300 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                    </svg>
+                  </button>
+                  <!-- Botón de eliminar -->
+                  <button class="bg-red-600 text-white p-2 rounded hover:bg-red-300 transition" @click="open = true">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 8.084.92m-8.084-.92c.34-.053.682-.109 1.022-.165m.542 0a48.11 48.11 0 0 1 7.15.696" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modal -->
+            <div
+              x-show="open"
+              @keydown.escape.window="open = false"
+              class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+            >
+              <div class="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
+                <h2 class="text-lg font-bold mb-4">Confirmación de eliminación</h2>
+                <p class="mb-4">¿Estás seguro de que deseas eliminar este producto?</p>
+                <div class="flex justify-end space-x-4">
+                  <button
+                    @click="open = false"
+                    class="bg-gray-500 text-white p-2 rounded hover:bg-gray-400 transition"
+                  >
+                    Cancelar
+                  </button>
+                  <button
+                    @click="open = false"
+                    class="bg-red-600 text-white p-2 rounded hover:bg-red-500 transition"
+                  >
+                    Eliminar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Producto 4 -->
+          <div x-data="{ open: false }">
+            <div class="bg-gray-300 p-4 flex flex-col justify-between">
+              <img src="https://via.placeholder.com/150" alt="Imagen del producto" class="w-full h-32 object-cover mb-2" />
+              <h2 class="text-lg font-bold mb-1">Nombre del producto 4</h2>
+              <p class="text-sm mb-2">Descripción del producto 4</p>
+              <div class="flex justify-between items-center">
+                <span class="font-bold">$00.00</span>
+                <div class="flex space-x-2">
+                  <!-- Botón de editar -->
+                  <button class="bg-blue-500 text-white p-2 rounded hover:bg-blue-300 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                    </svg>
+                  </button>
+                  <!-- Botón de eliminar -->
+                  <button class="bg-red-600 text-white p-2 rounded hover:bg-red-300 transition" @click="open = true">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 8.084.92m-8.084-.92c.34-.053.682-.109 1.022-.165m.542 0a48.11 48.11 0 0 1 7.15.696" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modal -->
+            <div
+              x-show="open"
+              @keydown.escape.window="open = false"
+              class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+            >
+              <div class="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
+                <h2 class="text-lg font-bold mb-4">Confirmación de eliminación</h2>
+                <p class="mb-4">¿Estás seguro de que deseas eliminar este producto?</p>
+                <div class="flex justify-end space-x-4">
+                  <button
+                    @click="open = false"
+                    class="bg-gray-500 text-white p-2 rounded hover:bg-gray-400 transition"
+                  >
+                    Cancelar
+                  </button>
+                  <button
+                    @click="open = false"
+                    class="bg-red-600 text-white p-2 rounded hover:bg-red-500 transition"
+                  >
+                    Eliminar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </main>
+    </div>
+
+    <!-- Agregar el enlace al archivo de Alpine.js -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/alpine.min.js" defer></script>
+    <!-- Agregar el enlace al archivo de FontAwesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <!-- Agregar el enlace al archivo de jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".opcion-con-desplegable > div").click(function () {
+          $(this).siblings(".desplegable").slideToggle();
+          $(this).find("i.fas").toggleClass("fa-chevron-left fa-chevron-down");
+        });
+      });
+    </script>
+  </body>
+</html>
