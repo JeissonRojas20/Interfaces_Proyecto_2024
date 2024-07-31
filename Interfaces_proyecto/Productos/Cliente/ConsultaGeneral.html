@@ -9,56 +9,71 @@
 </head>
 
 <body class="font-sans flex flex-col min-h-screen">
-    <header class="flex justify-between items-center p-4 bg-gray-100">
-        <div class="w-12 h-12 bg-gray-300"></div>
-        <nav class="hidden md:flex space-x-4">
-            <a href="#" class="text-blue-600">Inicio</a>
-            <a href="#" class="text-blue-600">Productos</a>
-            <a href="#" class="text-blue-600">Nosotros</a>
-        </nav>
-        <div class="space-x-2">
-            <button class="px-3 py-1 border border-gray-300 rounded">Registrarme</button>
-            <button class="px-3 py-1 border border-gray-300 rounded">Iniciar sesión</button>
+    <header class="bg-gray-800 py-4 shadow-md w-full">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#" class="text-lg font-bold text-white">Solo Electricos</a>
+            <nav class="hidden md:flex space-x-4">
+                <ul class="flex space-x-4">
+                    <li><a href="../../bienvenida_cliente.html" class="text-white hover:text-gray-300">Inicio</a></li>
+                    <li><a href="./ConsultaGeneral.html" class="text-white hover:text-gray-300">Productos</a></li>
+                    <li><a href="#" class="text-white hover:text-gray-300">Nosotros</a></li>
+                </ul>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-white hover:text-gray-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" />
+                        </svg>
+    
+                    </a>
+                    <a href="#" class="text-white hover:text-gray-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                        </svg>
+    
+                    </a>
+                    <div class="relative">
+                        <button id="dropdown-button"
+                            class="flex items-center space-x-2 py-1 text-white hover:bg-gray-300 rounded-md focus:outline-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                            </svg>
+    
+                        </button>
+                        <div id="dropdown-menu"
+                            class="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg hidden">
+                            <a href="./perfil.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-300">Mis datos</a>
+                            <a href="/" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Cerrar sesión</a>
+                        </div>
+                    </div>
+                    <button class="md:hidden" onclick="toggleMenu()">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
         </div>
-        <button id="mobile-menu-button" class="md:hidden flex items-center px-3 py-2 border rounded">
-            <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <title>Menu</title>
-                <path d="M0 3h20v2H0zM0 7h20v2H0zM0 11h20v2H0zM0 15h20v2H0z" />
-            </svg>
-        </button>
+        
     </header>
-    <nav id="mobile-menu" class="hidden md:hidden">
-        <ul class="flex flex-col p-4 space-y-2 bg-gray-100">
-            <li><a href="#" class="text-blue-600">Inicio</a></li>
-            <li><a href="#" class="text-blue-600">Productos</a></li>
-            <li><a href="#" class="text-blue-600">Nosotros</a></li>
-        </ul>
-    </nav>
 
-    <div class="flex justify-center my-6">
+    <div class="flex justify-center mt-8">
         <input type="text" placeholder="Buscar producto"
             class="w-full md:w-96 px-3 py-2 border border-gray-300 rounded">
     </div>
 
-    <section class="bg-gray-200 p-6 my-6">
-        <h2 class="text-2xl font-bold mb-4 text-center">Promociones</h2>
-        <div class="relative overflow-hidden" style="height: 200px;">
-            <div id="carousel" class="flex transition-transform duration-500 ease-in-out" style="height: 100%;">
-                <div class="w-full flex-shrink-0 bg-blue-300 flex items-center justify-center">
-                    <p>Promoción 1</p>
-                </div>
-                <div class="w-full flex-shrink-0 bg-green-300 flex items-center justify-center">
-                    <p>Promoción 2</p>
-                </div>
-                <div class="w-full flex-shrink-0 bg-red-300 flex items-center justify-center">
-                    <p>Promoción 3</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <hr class="mt-4 border-black border-1.5">
 
     <section class="p-6 flex-grow">
-        <h2 class="text-2xl font-bold mb-6 text-center">Nuestros productos</h2>
+        <h2 class="text-2xl font-bold mb-6 text-center bg-gray-200 p-3">Nuestros productos</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <!-- 8 productos -->
             <div class="bg-gray-200 p-4 text-center">
@@ -139,19 +154,6 @@
             menu.classList.toggle('hidden');
         });
 
-        const carousel = document.getElementById('carousel');
-        let currentIndex = 0;
-
-        function showSlide(index) {
-            carousel.style.transform = `translateX(-${index * 100}%)`;
-        }
-
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % 3;
-            showSlide(currentIndex);
-        }
-
-        setInterval(nextSlide, 5000);
     </script>
 </body>
 
