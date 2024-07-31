@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solo eléctricos - Registrar usuario</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="flex flex-col min-h-screen bg-gray-100">
+    <div class="flex flex-1">
+        <!-- Barra lateral -->
+        <aside class="bg-gray-800 text-white w-64 min-h-screen p-4">
+            <h1 class="text-2xl font-bold mb-6">Solo Electricos</h1>
+            <nav>
+                <ul class="space-y-2">
+                    <li><a href="./bienvenida_administrador.html"
+                            class="flex items-center p-2 hover:bg-gray-700 rounded"><i
+                                class="fas fa-home mr-2"></i>Inicio</a></li>
+                    <li><a href="./consulta_usuarios.html" class="flex items-center p-2 bg-blue-600 rounded"><i
+                                class="fas fa-users mr-2"></i>Usuarios</a></li>
+                    <li><a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded"><i
+                                class="fas fa-box mr-2"></i>Productos</a></li>
+                    <li><a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded"><i
+                                class="fas fa-shopping-cart mr-2"></i>Ventas</a></li>
+                    <li><a href="#" class="flex items-center p-2 hover:bg-gray-700 rounded"><i
+                                class="fas fa-truck mr-2"></i>Pedidos</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Contenido principal -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <!-- Header -->
+            <header class="bg-gray-800 shadow-md p-4">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-xl font-semibold text-gray-100">Nombre del administrador</h2>
+                    <div class="relative">
+                        <button id="dropdown-button"
+                            class="flex items-center space-x-2 text-gray-100 hover:text-gray-300 focus:outline-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                            </svg>
+                        </button>
+                        <div id="dropdown-menu"
+                            class="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg hidden">
+                            <a href="./perfil_administrador.html"
+                                class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Mis datos</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Cerrar sesión</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Contenido de la página -->
+            <main class="container mx-auto p-4 m-4">
+                <div class="max-w-md mx-auto p-8 bg-white rounded-md shadow-md">
+                    <h2 class="text-2xl font-semibold text-center mb-6">Crea un usuario</h2>
+                    <form action="./consulta_usuarios.html">
+                        <div class="flex mb-4">
+                            <div class="w-1/2 pr-2">
+                                <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Ingresa el
+                                    nombre</label>
+                                <input type="text" id="name" name="name" placeholder="Nombre" required
+                                    class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+                            </div>
+                            <div class="w-1/2 pl-2">
+                                <label for="lastName" class="block text-gray-700 text-sm font-bold mb-2">Ingresa los
+                                    apellidos</label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Apellidos" required
+                                    class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+                            </div>
+                        </div>
+                        <div class="flex mb-4">
+                            <div class="w-1/2 pr-2">
+                                <label for="num" class="block text-gray-700 text-sm font-bold mb-2">Ingresa el
+                                    numero</label>
+                                <input type="number" id="num" name="num" placeholder="Numero telefonico" required
+                                    class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+                            </div>
+                            <div class="w-1/2 pl-2">
+                                <label for="genero" class="block text-gray-700 text-sm font-bold mb-2">Selecciona el
+                                    genero</label>
+                                <select id="genero"
+                                    class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+                                    required>
+                                    <option value="masculino">Masculino</option>
+                                    <option value="femenino">Femenino</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label for="adress" class="block text-gray-700 text-sm font-bold mb-2">Ingresa la direccion
+                                de
+                                residencia</label>
+                            <input type="text" id="adress" name="adress" placeholder="Direccion" required
+                                class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Ingresa el correo
+                                electronico</label>
+                            <input type="text" id="email" name="email" placeholder="Correo electronico" required
+                                class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+                        </div>
+                        <div class="flex mb-4">
+                            <div class="w-1/2 pr-2">
+                                <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Ingresa una
+                                    contraseña</label>
+                                    <input type="password" id="password" name="password" placeholder="Contraseña" required
+                                    class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+                                </div>
+                                <div class="w-1/2 pl-2">
+                                    <label for="confirmPassword" class="block text-gray-700 text-sm font-bold mb-2">Confirma
+                                        la
+                                        contraseña</label>
+                                        <input type="password" id="confirmPassword" name="confirmPassword"
+                                        placeholder="Confirmar contraseña" required
+                                        class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500">
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="rol" class="block text-gray-700 text-sm font-bold mb-2">Selecciona el rol</label>
+                                    <select id="rol"
+                                        class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+                                        required>
+                                        <option value="administrador">Administrador</option>
+                                        <option value="almacenista">Almacenista</option>
+                                        <option value="cajero">Cajero</option>
+                                    </select>
+                                </div>
+                                <div class="text-center mx-auto">
+                                        <button type="submit"
+                                        class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue">
+                                        Registrar usuario
+                                    </button>
+                                </div>
+                    </form>
+                </div>
+            </main>
+
+            <!-- Footer -->
+            <footer class="bg-gray-800 text-white p-6">
+                <div class="container mx-auto">
+                    <div class="flex flex-wrap justify-between">
+                        <div class="w-full md:w-1/3 mb-6 md:mb-0">
+                            <h3 class="text-lg font-bold mb-2">Solo eléctricos</h3>
+                            <p>Tu tienda de confianza para productos eléctricos.</p>
+                        </div>
+                        <div class="w-full md:w-1/3 mb-6 md:mb-0">
+                            <h3 class="text-lg font-bold mb-2">Enlaces rápidos</h3>
+                            <ul>
+                                <li><a href="#" class="hover:text-gray-300">Inicio</a></li>
+                                <li><a href="#" class="hover:text-gray-300">Productos</a></li>
+                                <li><a href="#" class="hover:text-gray-300">Nosotros</a></li>
+                            </ul>
+                        </div>
+                        <div class="w-full md:w-1/3">
+                            <h3 class="text-lg font-bold mb-2">Contacto</h3>
+                            <p>Email: info@soloelectricos.com</p>
+                            <p>Teléfono: (123) 456-7890</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <p>&copy; 2024 Solo eléctricos. Todos los derechos reservados.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="./js/dropdown.js"></script>
+</body>
+
+</html>
